@@ -122,6 +122,13 @@ You can deploy this project using:
 - Twitter: [@KhaledA93751489](https://twitter.com/KhaledA93751489)
 - LinkedIn: [khaled-al-khateeb](https://www.linkedin.com/in/khaled-al-khateeb-3a1013247/)
 
+👤 **Orji Maxwell**
+- GitHub: [@githubhandle](https://github.com/Maxwell011)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chukwuemeka-maxwell/)
+- Twitter: [Maxwellchu2Orji](https://Maxwellchu2Orji)
+
+👤 **Kenny Egun**
+- GitHub: [@kennyegun24] (https://github.com/kennyegun24)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
