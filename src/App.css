@@ -3,3 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.App {
+  display: flex;
+}
+
+.navApp {
+  flex: 1;
+}
+
+.navRoute {
+  flex: 6;
+}
