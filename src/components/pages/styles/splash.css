@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.splashDiv {
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(182, 175, 175, 0.2) 0, #facd05cc 0), url('../../../assets/illustration-motorcycle-red-color_1308-35859.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.splashHeader {
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.loginRegDiv {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: start;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 1rem;
+  background: green;
+  border-radius: 5rem;
+  width: fit-content;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.link:hover {
+  color: green;
+  background: #fff;
+  transition: 0.5s ease-in-out;
+}
