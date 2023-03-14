@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Norican&family=Poppins&family=Roboto&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -6,6 +8,8 @@
 
 .App {
   display: flex;
+  height: 100%;
+  /* border: 1px solid #111; */
 }
 
 .navApp {
@@ -14,4 +18,10 @@
 
 .navRoute {
   flex: 6;
+}
+
+.AppDiv {
+  height: 100vh;
+  border: 1px solid #111;
+  /* display: flex; */
 }
