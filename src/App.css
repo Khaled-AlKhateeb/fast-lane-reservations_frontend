@@ -9,6 +9,7 @@
 .App {
   display: flex;
   height: 100%;
+
   /* border: 1px solid #111; */
 }
 
@@ -23,5 +24,6 @@
 .AppDiv {
   height: 100vh;
   border: 1px solid #111;
+
   /* display: flex; */
 }
