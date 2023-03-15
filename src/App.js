@@ -12,9 +12,6 @@ function App() {
   const currentUser = true;
   return (
     <div className="AppDiv">
-      {/* {currentUser
-        ?
-        ( */}
       <div className="App">
         {currentUser && <div className="navApp">
           <Nav />
@@ -28,16 +25,6 @@ function App() {
           </Routes>
         </div>
       </div>
-      {/* )
-        :
-        ( */}
-      {/* <Routes>
-            <Route index element={<Splash />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Routes> */}
-      {/* )} */}
-
     </div>
 
   );
