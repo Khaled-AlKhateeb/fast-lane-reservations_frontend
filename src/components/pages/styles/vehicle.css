@@ -1,0 +1,42 @@
+.vehicleImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.vehiclesDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.vehiclesDiv > h2 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.vehicleDiv {
+  width: 300px;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vehicleDiv > h3 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.vehicles {
+  justify-content: center;
+  align-items: center;
+
+  /* height: 100vh; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
