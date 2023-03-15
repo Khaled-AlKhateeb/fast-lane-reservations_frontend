@@ -1,14 +1,14 @@
 /* eslint-disable */
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Login from './components/pages/Login';
-import Splash from './components/pages/Splash';
-import Register from './components/pages/Register';
+import Reservations from './components/pages/Reservations';
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import Splash from './components/auth/Splash'
 import Nav from './components/left/Nav';
-import Reservations from './components/reservation/Reservations';
 
 function App() {
-  const currentUser = true;
+  const currentUser = false;
   return (
     <div className="AppDiv">
       {currentUser
@@ -21,7 +21,6 @@ function App() {
             <div className="navRoute">
               <Routes>
                 <Route path="/reservations" element={<Reservations />} />
-                <Route path="/register" element={<Register />} />
               </Routes>
             </div>
           </div>
