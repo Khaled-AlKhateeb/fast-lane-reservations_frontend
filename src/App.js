@@ -1,6 +1,7 @@
 /* eslint-disable */
 import './App.css';
 import { Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Reservations from './components/pages/Reservations';
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
@@ -9,7 +10,8 @@ import Nav from './components/left/Nav';
 import Vehicles from './components/pages/Vehicles';
 
 function App() {
-  const currentUser = true;
+  const { currentUser } = useSelector((state) => state.user)
+  console.log(currentUser)
   return (
     <div className="AppDiv">
       <div className="App">
