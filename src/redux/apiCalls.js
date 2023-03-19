@@ -3,14 +3,16 @@ import { publicRequest } from "../request";
 import { loginFailure, loginStart, loginSuccess } from "./user/user"
 
 export const login = async (dispatch, user) => {
-    dispatch(loginStart());
-    try {
-        const res = await publicRequest.post("/user/login", user)
-        const responseData = res.data;
-        delete responseData.headers;
-        dispatch(loginSuccess(responseData))
-        console.log(responseData)
-    } catch (err) {
-        dispatch(loginFailure())
-    }
+  dispatch(loginStart());
+  try {
+    const res = await publicRequest.post("/user/login", user)
+    const responseData = res.data;
+    delete responseData.headers;
+    dispatch(loginSuccess(responseData))
+  } catch (err) {
+    dispatch(loginFailure())
+  }
+}
+export const logout = (dispatch) => {
+  dispatch(loginSuccess(false))
 }
