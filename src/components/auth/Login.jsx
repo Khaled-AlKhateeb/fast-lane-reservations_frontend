@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login } from '../../redux/apiCallls';
+import { login } from '../../redux/apiCalls';
 import './styles/login.css';
 
 const Login = () => {
