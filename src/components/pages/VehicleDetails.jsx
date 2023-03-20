@@ -3,8 +3,12 @@ import { publicRequest } from "../../request";
 import { useParams } from "react-router-dom";
 
 const VehicleDetails = () => {
+
+  //get vehicle id from the route
   const { id } = useParams();
+
   const [vehicleDetails, setVehicleDetails] = useState([]);
+  
   useEffect(() => {
     const fetchVehicleDetails = async () => {
       try {
@@ -21,7 +25,11 @@ const VehicleDetails = () => {
   return (
     <section>
       {vehicleDetails.map((vehicle) => (
-        <>
+        <div>
+          <div className='vehicle-image'>
+            <img src={vehicle.image} alt='vehicle-icon' />
+          </div>
+          <div>
           <div className="vehicle-name">
             <h3>{vehicle.name}</h3>
             <span className="text">
@@ -33,13 +41,13 @@ const VehicleDetails = () => {
           </div>
           <div className="vehicle-model">
             <span className="text">
-              Genre:
+              model:
               {vehicle.model}
             </span>
           </div>
           <div className="product-date">
             <span className="text">
-              Language:
+              year:
               {vehicle.year}
             </span>
           </div>
@@ -49,8 +57,8 @@ const VehicleDetails = () => {
               {vehicle.horse_power}
             </span>
           </div>
-
-        </>
+         </div>
+        </div>
       ))}
         <div className='action'>
             <a href=''>Reserve</a>
