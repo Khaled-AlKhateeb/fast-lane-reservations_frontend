@@ -23,7 +23,7 @@ function App() {
             <Route path={"/reservations"} element={currentUser ? <Reservations /> : <Navigate to="/" />} />
             <Route index element={currentUser ? <Vehicles /> : <Splash />} />
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={currentUser ? <Navigate to="/" /> : <Register />} />
           </Routes>
         </div>
       </div>
