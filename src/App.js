@@ -25,7 +25,7 @@ function App() {
             <Route index element={currentUser ? <Vehicles /> : <Splash />} />
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <Login />} />
             <Route path="/register" element={currentUser ? <Navigate to="/" /> : <Register />} />
-            <Route path="/addVehicle" element={<AddVehicle />} />
+            <Route path="/addVehicle" element={currentUser ? <AddVehicle /> : <Navigate to="/" /> } />
           </Routes>
         </div>
       </div>
