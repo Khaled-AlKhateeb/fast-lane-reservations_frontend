@@ -19,7 +19,7 @@ export const logout = (dispatch) => {
 export const register = async (dispatch, user) => {
     dispatch(loginStart())
     try {
-      const res = await publicRequest.post("/users", user)
+      const res = await publicRequest.post( "/users", user)
       const responseData = res.data;
       delete responseData.headers;
       dispatch(loginSuccess(responseData))
