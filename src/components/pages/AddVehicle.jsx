@@ -12,22 +12,41 @@ const AddVehicle = () => {
   const [horsePower, addHorsePower] = useState('');
   const [price, addPrice] = useState('');
   const [description, addDescription] = useState('');
-  const { currentUser } = useSelector((state) => state.user );
+  const { currentUser } = useSelector((state) => state.user);
+  const addVehicleForm = document.getElementById('addVehicleForm');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const dispatch = useDispatch();
   const handleAdd = (e) => {
     e.preventDefault();
-    addVehicle(dispatch, {image, name, model, horse_power: horsePower, price, description, user_id: currentUser.user.id})
+    addVehicle(dispatch, {
+      image,
+      name,
+      model,
+      horse_power: horsePower,
+      price,
+      description,
+      user_id: currentUser.user.id
+    }, () => setShowSuccessMessage(true));
+    const inputs = addVehicleForm.querySelectorAll('input');
+    for (const input of inputs) {
+      input.value = '';
+    }
+    const textareas = addVehicleForm.querySelectorAll('textarea');
+    for (const textarea of textareas) {
+      textarea.value = '';
+    }
   }
   
   return (
   <div className='main-container'>
     <h1>Add a Vehicle</h1>
-    <form
-      className='form-container'
-      action=''
-    >
-      <div className="input-container">
-        <label htmlFor='Image'>Image</label>
+      <form
+        id="addVehicleForm"
+        className='form-container'
+        action=''
+      >
+        <div className="input-container">
+          <label htmlFor='Image'>Image</label>
         <input
           className="input"
           name='Image'
@@ -98,9 +117,12 @@ const AddVehicle = () => {
           max={250}
           required
         />
-      </div>
+        </div>
       <button className="submit-btn" type="submit" onClick={handleAdd}>Add</button>
-    </form>
+      </form>
+      {showSuccessMessage && (
+    <p id="successMessage">Vehicle added successfully!</p>
+  )}
   </div>
 )};
 
