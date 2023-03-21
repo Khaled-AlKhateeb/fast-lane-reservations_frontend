@@ -56,17 +56,6 @@ const AddVehicle = () => {
           required
         />
       </div>
-      {/*<div className="input-container">
-        <label htmlFor='Year'>Year</label>
-        <input
-          className="input"
-          name='Year'
-          type='number'
-          min={1950}
-          max={2023}
-          required
-        />
-      </div>*/}
       <div className="input-container">
         <label htmlFor='HorsePower'>Horse Power</label>
         <input
