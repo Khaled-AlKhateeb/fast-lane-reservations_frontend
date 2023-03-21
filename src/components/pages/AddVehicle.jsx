@@ -18,20 +18,17 @@ const AddVehicle = () => {
   const dispatch = useDispatch();
   const handleAdd = (e) => {
     e.preventDefault();
-    addVehicle(
-      dispatch,
-      {
-        image,
-        name,
-        model,
-        year,
-        horse_power: horsePower,
-        price,
-        description,
-        user_id: currentUser.user.id,
-      }, setShowSuccessMessage
-    );
-    const inputs = addVehicleForm.querySelectorAll("input");
+    addVehicle(dispatch, {
+      image,
+      name,
+      model,
+      year,
+      horse_power: horsePower,
+      price,
+      description,
+      user_id: currentUser.user.id
+    }, setShowSuccessMessage);
+    const inputs = addVehicleForm.querySelectorAll('input');
     for (const input of inputs) {
       input.value = "";
     }
