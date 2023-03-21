@@ -4,16 +4,12 @@
   border-radius: 50%;
 }
 
-/* .vehiclesDiv {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-} */
-
 .linkss {
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  color: #000;
 }
 
 .vehiclesDiv > h2 {
@@ -42,12 +38,4 @@
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
-}
-
-.linkss {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  color: #000;
 }
