@@ -26,7 +26,7 @@ const AddVehicle = () => {
       price,
       description,
       user_id: currentUser.user.id
-    }, () => setShowSuccessMessage(true));
+    }, setShowSuccessMessage);
     const inputs = addVehicleForm.querySelectorAll('input');
     for (const input of inputs) {
       input.value = '';
