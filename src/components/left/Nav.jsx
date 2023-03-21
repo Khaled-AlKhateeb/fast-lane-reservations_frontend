@@ -21,7 +21,11 @@ const Nav = () => {
 
   return (
     <div className='NavDiv'>
-      <h2 className='NavH2'>Fast-Lane</h2>
+      <img
+        className="logo"
+        src="https://res.cloudinary.com/dosu6sfvl/image/upload/v1679389949/Fast%20Lane%20Assets/FL_Logo_hgb5gl.png"
+        alt="Fast Lane logo"
+      />
       <nav>
         <ul>
           <NavLink
