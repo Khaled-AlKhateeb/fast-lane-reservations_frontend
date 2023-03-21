@@ -5,16 +5,16 @@
   border-radius: 50%;
 }
 
-.vehiclesDiv {
+.linkss {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+  align-items: center;
+  width: fit-content;
+  color: #000;
 }
 
 .vehiclesDiv > h2 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -26,8 +26,8 @@
   align-items: center;
 }
 
-.vehicleDiv > h3 {
-  font-size: 20px;
+.linkss > h3 {
+  font-size: 25px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
 }
