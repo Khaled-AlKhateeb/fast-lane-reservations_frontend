@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import { configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
