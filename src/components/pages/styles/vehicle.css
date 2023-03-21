@@ -1,32 +1,33 @@
 .vehicleImg {
-  width: 200px;
-  height: 200px;
+  display: block;
+  margin-inline: auto;
+  width: 100%;
   border-radius: 50%;
 }
 
-.vehiclesDiv {
+.linkss {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+  align-items: center;
+  width: fit-content;
+  color: #000;
 }
 
 .vehiclesDiv > h2 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
 }
 
 .vehicleDiv {
-  width: 300px;
+  width: 30%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
 }
 
-.vehicleDiv > h3 {
-  font-size: 20px;
+.linkss > h3 {
+  font-size: 25px;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
 }
@@ -34,9 +35,16 @@
 .vehicles {
   justify-content: center;
   align-items: center;
-
-  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+}
+
+.vehicle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 20rem;
 }
