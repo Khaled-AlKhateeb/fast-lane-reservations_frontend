@@ -28,11 +28,12 @@ export const register = async (dispatch, user) => {
   }
 }
 
-export const addVehicle = async (dispatch, add) => {
+export const addVehicle = async (dispatch, add, message) => {
   try {
     const rest = await publicRequest.post("/vehicles", add)
     const responseData = rest.data;
     delete responseData.headers;
+    message(true)
   } catch (error) {
 
   }

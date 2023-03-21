@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const Vehicles = () => {
+
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
   const [get, setGet] = useState(null);

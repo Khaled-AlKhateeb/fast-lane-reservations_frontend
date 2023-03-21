@@ -6,7 +6,7 @@
 
 .splashDiv {
   height: 100vh;
-  background-image: linear-gradient(180deg, rgba(182, 175, 175, 0.2) 0, #facd05cc 0), url('../../../assets/illustration-motorcycle-red-color_1308-35859.webp');
+  background-image: linear-gradient(180deg, rgba(182, 175, 175, 0.2) 0, #facd05cc 0), url('https://res.cloudinary.com/dosu6sfvl/image/upload/v1679389948/Fast%20Lane%20Assets/bg-image_lpbp0r.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -18,33 +18,35 @@
 }
 
 .splashHeader {
-  color: #fff;
-  font-size: 25px;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 900;
   font-family: sans-serif;
 }
 
 .loginRegDiv {
   display: flex;
-  gap: 1rem;
   flex-direction: column;
   align-items: center;
   margin-top: 1.5rem;
+  gap: 1rem;
+  width: 20%;
 }
 
 .link {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
-  text-align: start;
   font-weight: 600;
   font-family: sans-serif;
   padding: 1rem;
   background: green;
   border-radius: 5rem;
-  width: fit-content;
+  width: 100%;
   transition: 0.5s ease-in-out;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 

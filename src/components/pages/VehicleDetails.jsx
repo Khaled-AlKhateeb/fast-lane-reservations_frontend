@@ -8,9 +8,9 @@ const VehicleDetails = () => {
 
   return (
     <>
-      <div className="detailsDiv">
+      <div className="details-div">
         <img src={state.image} alt="" />
-        <div className="textDetailsDiv">
+        <div className="text-details-div">
           <article className="item">
             <p className="label">Name: </p>
             <p className="value">{state.name}</p>
@@ -21,14 +21,14 @@ const VehicleDetails = () => {
           </article>
           <article className="item">
             <p className="label">Price: </p>
-            <p className="value">{state.price}</p>
+            <p className="value">$ {state.price}</p>
           </article>
           <article className="item">
             <p className="label">Horse Power: </p>
-            <p className="value">{state.horse_power}</p>
+            <p className="value">{state.horse_power} hp</p>
           </article>
           <article className="item">
-            <p className="label">Product Date: </p>
+            <p className="label">Production: </p>
             <p className="value">{state.year}</p>
           </article>
           <br />
