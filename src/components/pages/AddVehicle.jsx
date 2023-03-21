@@ -12,11 +12,12 @@ const AddVehicle = () => {
   const [horsePower, addHorsePower] = useState("");
   const [price, addPrice] = useState("");
   const [description, addDescription] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   const addVehicleForm = document.getElementById("addVehicleForm");
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const dispatch = useDispatch();
   const handleAdd = (e) => {
+    e.preventDefault();
     addVehicle(
       dispatch,
       {
@@ -28,8 +29,7 @@ const AddVehicle = () => {
         price,
         description,
         user_id: currentUser.user.id,
-      },
-      () => setShowSuccessMessage(true),
+      }, setShowSuccessMessage
     );
     const inputs = addVehicleForm.querySelectorAll("input");
     for (const input of inputs) {
@@ -131,7 +131,7 @@ const AddVehicle = () => {
         </button>
       </form>
       {showSuccessMessage && (
-        <p id='successMessage'>Vehicle added successfully!</p>
+        <p className="success-message" id='successMessage'>Vehicle added successfully!</p>
       )}
     </div>
   );

@@ -63,3 +63,9 @@ label {
   color: white;
   cursor: pointer;
 }
+
+.success-message {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
