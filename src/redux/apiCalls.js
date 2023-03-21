@@ -17,13 +17,23 @@ export const logout = (dispatch) => {
   dispatch(loginSuccess(false))
 }
 export const register = async (dispatch, user) => {
-    dispatch(loginStart())
-    try {
-      const res = await publicRequest.post( "/users", user)
-      const responseData = res.data;
-      delete responseData.headers;
-      dispatch(loginSuccess(responseData))
-    } catch (err) {
-      dispatch(loginFailure())
-    }
+  dispatch(loginStart())
+  try {
+    const res = await publicRequest.post("/users", user)
+    const responseData = res.data;
+    delete responseData.headers;
+    dispatch(loginSuccess(responseData))
+  } catch (err) {
+    dispatch(loginFailure())
   }
+}
+
+export const addVehicle = async (dispatch, add) => {
+  try {
+    const rest = await publicRequest.post("/vehicles", add)
+    const responseData = rest.data;
+    delete responseData.headers;
+  } catch (error) {
+
+  }
+}
