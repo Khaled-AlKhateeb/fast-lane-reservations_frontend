@@ -1,0 +1,44 @@
+.detailsDiv {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.detailsDiv img {
+  width: 70%;
+}
+
+.textDetailsDiv {
+  line-height: 50px;
+  width: 20%;
+}
+
+.action {
+  text-align: center;
+  background-color: chartreuse;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.item p {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.label {
+  text-align: left;
+  width: 70%;
+}
+
+.value {
+  text-align: right;
+  width: 30%;
+}

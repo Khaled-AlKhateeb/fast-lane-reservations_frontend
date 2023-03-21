@@ -1,12 +1,16 @@
 /* eslint-disable */
-import React from 'react';
+import React from "react";
 import {
-  RiLogoutCircleLine, RiReservedFill, RiHome7Line, RiAddCircleLine, RiDeleteBin6Line,
-} from 'react-icons/ri';
-import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { logout } from '../../redux/apiCalls';
-import './style/nav.css';
+  RiLogoutCircleLine,
+  RiReservedFill,
+  RiHome7Line,
+  RiAddCircleLine,
+  RiDeleteBin6Line,
+} from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { logout } from "../../redux/apiCalls";
+import "./style/nav.css";
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -16,47 +20,56 @@ const Nav = () => {
   };
 
   return (
-    <div className="NavDiv">
-      <h2 className="NavH2">Fast-Lane</h2>
+    <div className='NavDiv'>
+      <h2 className='NavH2'>Fast-Lane</h2>
       <nav>
         <ul>
-          <NavLink to="/" className="link">
+          <NavLink
+            to='/'
+            className='link'
+          >
             <RiHome7Line />
             Home
           </NavLink>
-          <NavLink to="/reservations" className="link">
+          <NavLink
+            to='/reservations'
+            className='link'
+          >
             <RiReservedFill />
             Reservations
           </NavLink>
-
           <NavLink to="/form">
           <li className="link">
             <RiAddCircleLine />
             Add a reservation
           </li>
           </NavLink>
-
-          {/* <li className="link">
+          <li className='link'>
             <RiAddCircleLine />
             Add a reservation
-          </li> */}
-
-          <li className="link">
+          </li>
+          <NavLink
+            to='/addVehicle'
+            className='link'
+          >
             <RiAddCircleLine />
             Add a vehicle
-          </li>
-          <li className="link">
+          </NavLink>
+          <li className='link'>
             <RiDeleteBin6Line />
             Delete a vehicle
           </li>
-          <li className="link" onClick={logouts}>
+          <li
+            className='link'
+            onClick={logouts}
+          >
             <RiLogoutCircleLine />
             Log out
           </li>
         </ul>
       </nav>
     </div>
-  )
+  );
 };
 
 export default Nav;
