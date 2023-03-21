@@ -1,70 +1,44 @@
-import React, { useEffect, useState } from "react";
-import { publicRequest } from "../../request";
-import { useParams } from "react-router-dom";
+/* eslint-disable */
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import './styles/vehicleDetails.css';
 
 const VehicleDetails = () => {
-
-  //get vehicle id from the route
-  const { id } = useParams();
-
-  const [vehicleDetails, setVehicleDetails] = useState([]);
-  
-  useEffect(() => {
-    const fetchVehicleDetails = async () => {
-      try {
-        const response = await publicRequest.get(`/vehicles/${id}`);
-        setVehicleDetails(response.data);
-        return response;
-      } catch (error) {
-        return error;
-      }
-    };
-    fetchVehicleDetails();
-  }, [id]);
+  const { state } = useLocation();
 
   return (
-    <section>
-      {vehicleDetails.map((vehicle) => (
-        <div>
-          <div className='vehicle-image'>
-            <img src={vehicle.image} alt='vehicle-icon' />
-          </div>
-          <div>
-          <div className="vehicle-name">
-            <h3>{vehicle.name}</h3>
-            <span className="text">
-              <i>
-                $-
-                {vehicle.price} upon reservations!
-              </i>
-            </span>
-          </div>
-          <div className="vehicle-model">
-            <span className="text">
-              model:
-              {vehicle.model}
-            </span>
-          </div>
-          <div className="product-date">
-            <span className="text">
-              year:
-              {vehicle.year}
-            </span>
-          </div>
-          <div className="horse-power">
-            <span className="text">
-              Price:
-              {vehicle.horse_power}
-            </span>
-          </div>
-         </div>
+    <>
+      <div className="detailsDiv">
+        <img src={state.image} alt="" />
+        <div className="textDetailsDiv">
+          <article className="item">
+            <p className="label">Name: </p>
+            <p className="value">{state.name}</p>
+          </article>
+          <article className="item">
+            <p className="label">Model: </p>
+            <p className="value">{state.model}</p>
+          </article>
+          <article className="item">
+            <p className="label">Price: </p>
+            <p className="value">{state.price}</p>
+          </article>
+          <article className="item">
+            <p className="label">Horse Power: </p>
+            <p className="value">{state.horse_power}</p>
+          </article>
+          <article className="item">
+            <p className="label">Product Date: </p>
+            <p className="value">{state.year}</p>
+          </article>
+          <br />
+          <a href="./reserve">
+            <div className="action">Reserve</div>
+          </a>
         </div>
-      ))}
-        <div className='action'>
-            <a href=''>Reserve</a>
-        </div>
-    </section>
+      </div>
+    </>
   );
 };
 
-export { VehicleDetails };
+export default VehicleDetails;
