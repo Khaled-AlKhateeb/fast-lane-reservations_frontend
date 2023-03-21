@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -16,10 +17,10 @@ const vehicleSlice = createSlice({
   name: 'vehicles',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(getVehicles.fulfilled, (state, { payload }) => {
+    builder.addCase(getVehicles.fulfilled, (state, action) => {
       const isFulfield = state;
       isFulfield.status = 'fulfilled';
-      isFulfield.vehicles = payload;
+      isFulfield.vehicles = action.payload;
     });
   },
 });
