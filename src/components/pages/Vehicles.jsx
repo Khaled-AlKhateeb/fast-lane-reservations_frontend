@@ -69,11 +69,4 @@ const Vehicles = () => {
   );
 }
 
-
-// export default () => {
-//   return (
-
-//   );
-// };
-
 export default Vehicles
