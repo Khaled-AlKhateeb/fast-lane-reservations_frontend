@@ -1,6 +1,7 @@
 .vehicleImg {
-  width: 200px;
-  height: 200px;
+  display: block;
+  margin-inline: auto;
+  width: 100%;
   border-radius: 50%;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .vehicleDiv {
-  width: 300px;
+  width: 30%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -34,9 +35,16 @@
 .vehicles {
   justify-content: center;
   align-items: center;
-
-  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+}
+
+.vehicle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 20rem;
 }

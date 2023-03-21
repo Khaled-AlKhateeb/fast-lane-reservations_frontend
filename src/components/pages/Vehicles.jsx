@@ -24,21 +24,24 @@ const getId = (id) => {
 }
     return (
       <div className="vehiclesDiv">
-        <h2>All Vehicles</h2>
+        <h2>Browse The Race Machines</h2>
         <div className="vehicles">
           {vehicle && vehicle.vehicles.map((veh) => (
-            <div className="vehicleDiv">
-              <img src={veh.image} className="vehicleImg" alt="" />
-              <h3>{veh.name}</h3>
-              <p>{veh.description}</p>
-              <NavLink
+            <NavLink
+              className="vehicle-container"
                 onClick={getId(veh.id)}
                 state={veh}
                 to={`/details/${veh.id}`}
               >
+            <div className="vehicleDiv">
+              <div className="image-container">
+                <img src={veh.image} className="vehicleImg" alt="" />
+              </div>
+              <h3>{veh.name}</h3>
+              <p>{veh.model}</p>
                 {veh.id}
-              </NavLink>
             </div>
+          </NavLink>
           ))}
         </div>
       </div>

@@ -8,7 +8,7 @@ const AddVehicle = () => {
   const [image, addImage] = useState('');
   const [name, addName] = useState('');
   const [model, addModel] = useState('');
-  //const [year, addYear] = useState('');
+  const [year, addYear] = useState('');
   const [horsePower, addHorsePower] = useState('');
   const [price, addPrice] = useState('');
   const [description, addDescription] = useState('');
@@ -22,6 +22,7 @@ const AddVehicle = () => {
       image,
       name,
       model,
+      year,
       horse_power: horsePower,
       price,
       description,
@@ -75,17 +76,18 @@ const AddVehicle = () => {
           required
         />
       </div>
-      {/*<div className="input-container">
+      <div className="input-container">
         <label htmlFor='Year'>Year</label>
         <input
           className="input"
           name='Year'
           type='number'
+          onChange={(e) => addYear(e.target.value)}
           min={1950}
           max={2023}
           required
         />
-      </div>*/}
+      </div>
       <div className="input-container">
         <label htmlFor='HorsePower'>Horse Power</label>
         <input
