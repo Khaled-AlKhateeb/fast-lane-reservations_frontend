@@ -1,3 +1,11 @@
+.main-title {
+  margin-top: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 800;
+  font-family: Roboto, sans-serif;
+}
+
 .vehicleImg {
   display: block;
   margin-inline: auto;
@@ -11,19 +19,16 @@
   align-items: center;
   width: fit-content;
   color: #000;
-}
-
-.vehiclesDiv > h2 {
-  font-size: 30px;
-  text-align: center;
+  border-radius: 2rem;
+  padding-bottom: 1rem;
 }
 
 .vehicleDiv {
-  width: 30%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
+  margin: 0;
 }
 
 .linkss > h3 {
@@ -32,12 +37,17 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.linkss:hover {
+  background-color: yellow;
+}
+
 .vehicles {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+  height: 100vh;
 }
 
 .vehicle-container {
