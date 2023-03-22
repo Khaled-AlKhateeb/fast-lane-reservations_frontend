@@ -12,8 +12,9 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
-
+     
     login(dispatch, { email, password });
+    
   }
   return (
     <div className="LoginDiv">

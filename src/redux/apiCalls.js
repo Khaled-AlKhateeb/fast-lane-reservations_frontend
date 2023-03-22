@@ -39,12 +39,12 @@ export const addVehicle = async (dispatch, add, message) => {
   }
 }
 
-export const addReservation = async (dispatch, add) => {
-  try {
-    const rest = await publicRequest.post("/reservations", add)
-    const responseData = rest.data;
-    delete responseData.headers;
-  } catch (error) {
+// export const addReservation = async (dispatch, add) => {
+//   try {
+//     const rest = await publicRequest.post("/vehicle/:vehicle_id/reservations", add)
+//     const responseData = rest.data;
+//     delete responseData.headers;
+//   } catch (error) {
 
-  }
-}
+//   }
+// }
