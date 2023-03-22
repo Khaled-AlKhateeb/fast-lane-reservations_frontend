@@ -56,8 +56,8 @@ const Vehicles = () => {
                   className="linkss"
                 >
                   <img src={veh.image} className="vehicleImg" alt="" />
-                  <h3>{veh.name}</h3>
-                  <h3>{veh.model}</h3>
+                  <h3 className="car-name">{veh.name}</h3>
+                  <h3 className="model-name">{veh.model}</h3>
                 </NavLink>
               </div>
             </SwiperSlide>
