@@ -5,7 +5,6 @@ import {
   RiReservedFill,
   RiHome7Line,
   RiAddCircleLine,
-  RiDeleteBin6Line,
 } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -42,10 +41,12 @@ const Nav = () => {
             <RiReservedFill />
             Reservations
           </NavLink>
-          <li className='link'>
+          <NavLink to="/form">
+          <li className="link">
             <RiAddCircleLine />
             Add a reservation
           </li>
+          </NavLink>
           <NavLink
             to='/addVehicle'
             className='link'
@@ -53,10 +54,6 @@ const Nav = () => {
             <RiAddCircleLine />
             Add a vehicle
           </NavLink>
-          <li className='link'>
-            <RiDeleteBin6Line />
-            Delete a vehicle
-          </li>
           <li
             className='link'
             onClick={logouts}

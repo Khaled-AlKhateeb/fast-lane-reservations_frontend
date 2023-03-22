@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.title {
+  margin: 2rem;
+  margin-bottom: 5rem;
+  font-size: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  text-align: center;
+}
+
+strong {
+  text-transform: capitalize;
+}
+
+em {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.input-container {
+  width: 30%;
+}
+
+.MuiFormControl-root {
+  margin: 10px 0;
+}
+
+.MuiButton-root {
+  margin-top: 20px;
+  background-color: green;
+  color: white;
+
+  /* &:hover {
+    background-color: #1976D2;
+  } */
+}
+
+.MuiInputBase-input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.MuiSelect-root {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.MuiSelect-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MuiFormLabel-root {
+  font-size: 16px;
+}
+
+.MuiMenuItem-root {
+  font-size: 16px;
+}
+
+.MuiTypography-root {
+  font-size: 16px;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: green;
+}
+
+.MuiPickersDay-current {
+  color: green;
+}
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: green;
+}
