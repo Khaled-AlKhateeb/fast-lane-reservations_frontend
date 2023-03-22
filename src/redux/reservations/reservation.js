@@ -5,17 +5,17 @@ const initialState = {
   reservations: [],
   status: "idle",
 };
-   const url = "http://localhost:5000/api/v1/reservations";
+const url = "http://localhost:5000/api/v1/reservations";
 export const getReservations = createAsyncThunk(
   "reservations/getReservations",
-  async ({token}) => {
+  async ({ token }) => {
     const response = await fetch(url, {
       headers: {
         "Content-Type": "application/json",
         Authorization: token,
       },
     });
-    const data =  response.json();
+    const data = response.json();
     return data;
   }
 );
@@ -43,21 +43,35 @@ export const createReservations = createAsyncThunk(
       if (response.status === 500) {
         throw new Error("Server error");
       }
-      console.log(response, "response");
       const data = response.json();
-      console.log(data, "data");
       return data;
     } catch (error) {
-      console.log(error.message());
     }
   }
 );
+
+export const deleteReserv = createAsyncThunk("reservations/deleteReserv",
+  async ({ token, id }) => {
+    try {
+      const response = await fetch(url`/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        }
+      });
+      const data = response.json();
+      return data;
+    } catch (error) {
+    }
+  }
+)
 
 const reservationsSlice = createSlice({
   name: "reservations",
   initialState,
   reducers: {
-   setStatus: (state) => {
+    setStatus: (state) => {
       state.status = "idle";
     }
   },
@@ -72,7 +86,11 @@ const reservationsSlice = createSlice({
         const isFulfield = state;
         isFulfield.status = "fulfilled";
         isFulfield.reservations = action.payload;
-      });
+      })
+      .addCase(deleteReserv.fulfilled, (state, action) => {
+        const full = state
+        full.status = 'fufilled'
+      })
   },
 });
 
