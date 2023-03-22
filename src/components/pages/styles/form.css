@@ -1,0 +1,55 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.MuiFormControl-root {
+  margin: 10px 0;
+}
+
+.MuiButton-root {
+  margin-top: 20px;
+  background-color: #2196F3;
+  color: white;
+  /* &:hover {
+    background-color: #1976D2;
+  } */
+}
+
+.MuiInputBase-input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.MuiSelect-root {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.MuiSelect-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MuiFormLabel-root {
+  font-size: 16px;
+}
+
+.MuiMenuItem-root {
+  font-size: 16px;
+}
+
+.MuiTypography-root {
+  font-size: 16px;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: #2196F3;
+}
+
+.MuiPickersDay-current {
+  color: #2196F3;
+}

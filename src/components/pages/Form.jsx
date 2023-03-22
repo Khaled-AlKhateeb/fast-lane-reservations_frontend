@@ -3,6 +3,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { useNavigate } from 'react-router-dom';
+import './styles/form.css';
 import {
   Button, MenuItem, Select, TextField,
 } from '@mui/material';
@@ -50,7 +51,7 @@ const Form = () => {
       <form>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
-            label="Date mobile"
+            label="start date"
             inputFormat="YYYY-MM-DD"
             value={fromDate}
             onChange={(newValue) => setFromDate(newValue)}
@@ -61,7 +62,7 @@ const Form = () => {
         </LocalizationProvider>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
-            label="Date mobile"
+            label="end date"
             inputFormat="YYYY-MM-DD"
             value={toDate}
             onChange={(newValue) => setToDate(newValue)}
