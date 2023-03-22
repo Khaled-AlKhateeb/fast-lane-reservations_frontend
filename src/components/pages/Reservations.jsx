@@ -12,8 +12,7 @@ const Reservations = () => {
   const reservations = useSelector((state) => state.reservations);
   const [allReservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
-//   console.log(allReservations);
-useEffect(() => {
+  useEffect(() => {
   if (currentUser?.data.token) {
     setLoading(true);
     dispatch(getReservations({ token: currentUser.data.token })).finally(() => {
