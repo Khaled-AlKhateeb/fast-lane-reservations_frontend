@@ -20,16 +20,19 @@ const VehicleDetails = () => {
             <p className="value">{state.model}</p>
           </article>
           <article className="item">
-            <p className="label">Price: </p>
-            <p className="value">$ {state.price}</p>
-          </article>
-          <article className="item">
             <p className="label">Horse Power: </p>
             <p className="value">{state.horse_power} hp</p>
           </article>
           <article className="item">
             <p className="label">Production: </p>
             <p className="value">{state.year}</p>
+          </article>
+          <article className="item">
+            <p className="label">{state.description}</p>
+          </article>
+          <article className="item">
+            <p className="label">Price: </p>
+            <p className="value">$ {state.price}</p>
           </article>
           <br />
           <a href="./reserve">

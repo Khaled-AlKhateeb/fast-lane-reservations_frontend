@@ -32,7 +32,7 @@ const Vehicles = () => {
   }
   return (
     <div className="vehiclesDiv">
-      <h2>All Vehicles</h2>
+      <h2 className="main-title">Browse through our available Race Machines</h2>
       <div className="vehicles">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -49,7 +49,6 @@ const Vehicles = () => {
           {vehicle && vehicle.vehicles.map((veh) => (
             <SwiperSlide key={veh.id}>
               <div className="vehicleDiv">
-
                 <NavLink
                   onClick={getId(veh.id)}
                   state={veh}
@@ -58,7 +57,7 @@ const Vehicles = () => {
                 >
                   <img src={veh.image} className="vehicleImg" alt="" />
                   <h3>{veh.name}</h3>
-                  <p>${veh.price}</p>
+                  <h3>{veh.model}</h3>
                 </NavLink>
               </div>
             </SwiperSlide>
