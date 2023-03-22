@@ -47,7 +47,7 @@ const Vehicles = () => {
           onSlideChange={() => console.log('slide change')}
         >
           {vehicle && vehicle.vehicles.map((veh) => (
-            <SwiperSlide>
+            <SwiperSlide key={veh.id}>
               <div className="vehicleDiv">
 
                 <NavLink
