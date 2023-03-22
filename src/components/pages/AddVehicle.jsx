@@ -28,7 +28,7 @@ const AddVehicle = () => {
       description,
       user_id: currentUser.user.id
     }, setShowSuccessMessage);
-    const inputs = addVehicleForm.querySelectorAll('input');
+    const inputs = addVehicleForm.querySelectorAll("input");
     for (const input of inputs) {
       input.value = "";
     }
@@ -128,7 +128,12 @@ const AddVehicle = () => {
         </button>
       </form>
       {showSuccessMessage && (
-        <p className="success-message" id='successMessage'>Vehicle added successfully!</p>
+        <p
+          className='success-message'
+          id='successMessage'
+        >
+          Vehicle added successfully!
+        </p>
       )}
     </div>
   );
