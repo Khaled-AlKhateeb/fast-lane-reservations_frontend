@@ -8,9 +8,14 @@ const initialState = {
    const url = "http://localhost:5000/api/v1/reservations";
 export const getReservations = createAsyncThunk(
   "reservations/getReservations",
-  async () => {
-    const response = await fetch(url);
-    const data = await response.json();
+  async ({token}) => {
+    const response = await fetch(url, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    });
+    const data =  response.json();
     return data;
   }
 );
