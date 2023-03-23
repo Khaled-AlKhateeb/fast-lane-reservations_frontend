@@ -54,55 +54,71 @@ const Form = () => {
     }
   }, [statusSetter]);
 
+  const styles = {
+    backgroundColor: 'green',
+    color: 'black',
+    fontSize: '1.2rem',
+    fontWeight: '600',
+    width: '30%',
+  };
+
   return (
-    <div className="addReservationDiv">
+    <div className="container">
+      <h1 className="title">Reserve Your Machine</h1>
       <form>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            label="start date"
-            inputFormat="YYYY-MM-DD"
-            value={fromDate}
-            onChange={(newValue) => setFromDate(newValue)}
-            /* eslint-disable react/jsx-props-no-spreading */
-            renderInput={(params) => <TextField {...params} />}
-            fullWidth
+        <div className="input-container">
+          <h2>Select Start Date</h2>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <MobileDatePicker
+              inputFormat="YYYY-MM-DD"
+              value={fromDate}
+              onChange={(newValue) => setFromDate(newValue)}
+              /* eslint-disable react/jsx-props-no-spreading */
+              renderInput={(params) => <TextField {...params} />}
+              fullWidth
+            />
+          </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <h2>Select End Date</h2>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <MobileDatePicker
+              className="end-date-label"
+              inputFormat="YYYY-MM-DD"
+              value={toDate}
+              onChange={(newValue) => setToDate(newValue)}
+              /* eslint-disable react/jsx-props-no-spreading */
+              renderInput={(params) => <TextField {...params} />}
+              fullWidth
+            />
+          </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <h2>Select Number of Persons</h2>
+          <TextField
+            id="outlined-basic"
+            variant="outlined"
+            type="number"
+            onChange={(e) => setNumberOfPerson(e.target.value)}
           />
-        </LocalizationProvider>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            label="end date"
-            inputFormat="YYYY-MM-DD"
-            value={toDate}
-            onChange={(newValue) => setToDate(newValue)}
-            /* eslint-disable react/jsx-props-no-spreading */
-            renderInput={(params) => <TextField {...params} />}
-            fullWidth
-          />
-        </LocalizationProvider>
-        <TextField
-          id="outlined-basic"
-          sx={{ m: 1, minWidth: 250 }}
-          label="Number of person"
-          variant="outlined"
-          type="number"
-          onChange={(e) => setNumberOfPerson(e.target.value)}
-        />
-        <Select
-          sx={{ m: 1, minWidth: 250 }}
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={vehicle?.id || ''}
-          onChange={(e) => handleVehicleId(e.target.value)}
-        >
-          {vehicles && vehicles.map((vec) => (
-            <MenuItem value={vec.id} key={vec.id}>
-              {vec.name}
-            </MenuItem>
-          ))}
-        </Select>
-        <Button variant="contained" onClick={handleSubmit}>
-          Reserve
-        </Button>
+        </div>
+        <div className="input-container">
+          <h2>Select Your desired Vehicle</h2>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={vehicle?.id || ''}
+            onChange={(e) => handleVehicleId(e.target.value)}
+          >
+            {vehicles && vehicles.map((vec) => (
+              <MenuItem value={vec.id} key={vec.id}>
+                <strong>{vec.name}</strong>
+                <em>{vec.model}</em>
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
+        <Button style={styles} onClick={handleSubmit}>Reserve</Button>
       </form>
     </div>
   );

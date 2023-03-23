@@ -32,7 +32,7 @@ const Vehicles = () => {
   }
   return (
     <div className="vehiclesDiv">
-      <h2>All Vehicles</h2>
+      <h2 className="main-title">Browse through our available Race Machines</h2>
       <div className="vehicles">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -47,9 +47,8 @@ const Vehicles = () => {
           onSlideChange={() => console.log('slide change')}
         >
           {vehicle && vehicle.vehicles.map((veh) => (
-            <SwiperSlide>
+            <SwiperSlide key={veh.id}>
               <div className="vehicleDiv">
-
                 <NavLink
                   onClick={getId(veh.id)}
                   state={veh}
@@ -57,8 +56,8 @@ const Vehicles = () => {
                   className="linkss"
                 >
                   <img src={veh.image} className="vehicleImg" alt="" />
-                  <h3>{veh.name}</h3>
-                  <p>${veh.price}</p>
+                  <h3 className="car-name">{veh.name}</h3>
+                  <h3 className="model-name">{veh.model}</h3>
                 </NavLink>
               </div>
             </SwiperSlide>
