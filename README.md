@@ -11,7 +11,8 @@
 
 # 📖Fast Lane Reservations System <a id="about-project"></a>
 
->  A simple UI built with React, Redux.
+An app to book a race care to test in the track.
+[Link to the backend](https://github.com/Khaled-AlKhateeb/fast-lane-reservation_backend)
 
 ## 🛠 Built With <a id="built-with"></a>
 
@@ -36,6 +37,8 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+
+
 
 ## 🚀 Live Demo <a id="live-demo"></a>
 
