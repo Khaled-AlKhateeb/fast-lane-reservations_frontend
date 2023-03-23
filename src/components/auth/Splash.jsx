@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiLogIn, BiLogOut } from 'react-icons/bi';

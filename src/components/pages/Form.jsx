@@ -22,6 +22,7 @@ const Form = () => {
   const [toDate, setToDate] = useState('');
   const [vehicle, setVehicle] = useState('');
   const [numberOfPerson, setNumberOfPerson] = useState(0);
+  const [err, setErr] = useState('');
   const { currentUser } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,7 +38,17 @@ const Form = () => {
   };
 
   const handleSubmit = () => {
-    dispatch(
+    if (vehicle === '') {
+      setErr('Select a vehicle');
+      return false;
+    } if (numberOfPerson <= 0) {
+      setErr('Select a valid number');
+      return false;
+    } if (numberOfPerson === '') {
+      setErr('Number of persons should not be empty');
+      return false;
+    }
+    return dispatch(
       createReservations({
         token: currentUser?.data.token,
         vehicle: vehicle || vehicles[0],
@@ -119,6 +130,7 @@ const Form = () => {
           </Select>
         </div>
         <Button style={styles} onClick={handleSubmit}>Reserve</Button>
+        {err && <span>{err}</span>}
       </form>
     </div>
   );
