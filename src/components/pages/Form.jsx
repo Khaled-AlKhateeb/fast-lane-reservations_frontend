@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useNavigate } from 'react-router-dom';
 import './styles/form.css';
 import {
-  Button, MenuItem, Select, TextField,
+  Button,
+  MenuItem,
+  Select,
+  TextField,
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { createReservations, setStatus } from '../../redux/reservations/reservation';
+import {
+  createReservations,
+  setStatus,
+} from '../../redux/reservations/reservation';
 
 const Form = () => {
   const [fromDate, setFromDate] = useState('');
@@ -24,7 +30,9 @@ const Form = () => {
   const statusSetter = useSelector((state) => state.reservations.status);
   const handleVehicleId = (vecId) => {
     const vehicleId = Number(vecId);
-    const selectedVehicle = vehicles.find((vehicle) => vehicle.id === vehicleId);
+    const selectedVehicle = vehicles.find(
+      (vehicle) => vehicle.id === vehicleId,
+    );
     setVehicle(selectedVehicle);
   };
 
