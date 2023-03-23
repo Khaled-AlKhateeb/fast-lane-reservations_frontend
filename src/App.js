@@ -12,7 +12,7 @@ import Vehicles from './components/pages/Vehicles';
 import AddVehicle from './components/pages/AddVehicle';
 import VehicleDetails from './components/pages/VehicleDetails';
 
-function App() {
+const App = () => {
   const { currentUser } = useSelector((state) => state.user)
   // console.log(currentUser)
   return (
@@ -34,7 +34,6 @@ function App() {
         </div>
       </div>
     </div>
-
   );
 }
 

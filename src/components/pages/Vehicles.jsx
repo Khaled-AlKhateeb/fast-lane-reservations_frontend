@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { getVehicles } from '../../redux/vehicles/vehicles'
 import 'swiper/css';
-// import Swiper from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper';
 import 'swiper/css/navigation';
@@ -36,13 +35,12 @@ const Vehicles = () => {
       <div className="vehicles">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          // effect={'fade'}
           spaceBetween={50}
           slidesPerView={3}
+          className="swiper-main-container"
           navigation
           pagination={{ clickable: true }}
           onReachEnd={() => {/*...*/ }}
-          // scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
