@@ -1,7 +1,17 @@
+.addReservationDiv {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  justify-content: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .MuiFormControl-root {
@@ -10,8 +20,9 @@ form {
 
 .MuiButton-root {
   margin-top: 20px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
+
   /* &:hover {
     background-color: #1976D2;
   } */
@@ -47,9 +58,9 @@ form {
 }
 
 .MuiPickersDay-daySelected {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 .MuiPickersDay-current {
-  color: #2196F3;
+  color: #2196f3;
 }
