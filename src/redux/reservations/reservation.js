@@ -53,14 +53,15 @@ export const createReservations = createAsyncThunk(
 export const deleteReserv = createAsyncThunk("reservations/deleteReserv",
   async ({ token, id }) => {
     try {
-      const response = await fetch(url`/${id}`, {
+      const response = await fetch(`${url}/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           Authorization: token,
-        }
+        },
       });
       const data = response.json();
+      console.log(data);
       return data;
     } catch (error) {
     }

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteReserv, getReservations } from "../../redux/reservations/reservation";
 import { useEffect } from "react";
 import { deleteReservations } from "../../redux/apiCalls";
+import { async } from "q";
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const Reservations = () => {
   const reservations = useSelector((state) => state.reservations);
   const [allReservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState(false);
+
   useEffect(() => {
     if (currentUser?.data.token) {
       setLoading(true);
@@ -19,7 +22,7 @@ const Reservations = () => {
         // Set loading state to false after a 5-second delay
         setTimeout(() => {
           setLoading(false);
-        }, 5000);
+        }, 2000);
       });
     }
   }, [currentUser, dispatch]);
@@ -31,14 +34,38 @@ const Reservations = () => {
     }
   }, [reservations]);
 
-  const deleteReservation = (id) => {
-    dispatch(deleteReserv({ token: currentUser.data.token, id: id }))
-    console.log('hey')
+  const deleteReservation = async (reservation) => {
+    setLoading(true);
+    dispatch(deleteReserv({ token: currentUser.data.token, id: reservation.id }))
+    .finally(() => {
+        const remainingReservations = allReservations.filter(
+      (r) => r.id !== reservation.id
+    );
+    setReservations(remainingReservations);
+  });
   }
+// const deleteReservation = async (reservation) => {
+//   setDeleting(true); // Set loading state to true
+//   try {
+//     await dispatch(
+//       deleteReserv({ token: currentUser.data.token, id: reservation.id })
+//     );
+//     dispatch(getReservations({ token: currentUser.data.token })); // Reload reservations after deletion
+//   } catch (error) {
+//     console.log("Error deleting reservation", error);
+//   } finally {
+//     const remainingReservations = allReservations.filter(
+//       (r) => r.id !== reservation.id
+//     );
+//     setReservations(remainingReservations);
+//   }
+// };
 
   return (
     <div>
-      {loading && <h1>Loading Your Reservations..</h1>}
+      {loading && (
+        <h1>Loading info</h1>
+      )}
       {!loading && (
         <>
           <h2>Your reservation has been successful!</h2>
@@ -50,7 +77,9 @@ const Reservations = () => {
                 <p>Start Date: {reservation.from_date}</p>
                 <p>End Date: {reservation.to_date}</p>
                 <p>Number of people: {reservation.number_of_person}</p>
-                <button onClick={() => deleteReservation(reservation.id)}>Delete</button>
+                <button onClick={() => deleteReservation(reservation)}>
+                  Delete
+                </button>
               </div>
             ))}
         </>
