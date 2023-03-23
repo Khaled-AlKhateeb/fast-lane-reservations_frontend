@@ -87,26 +87,32 @@ const Reservations = () => {
 
 
   return (
-    <div>
+    <div className="reservation-main-container">
       {loading && (
         <h1>Loading info</h1>
       )}
       {!loading && (
         <>
-          <h2>Your reservation has been successful!</h2>
-          {allReservations &&
-            allReservations.map((reservation) => (
-              <div key={reservation.id}>
-                <p>Reservation ID: {reservation.id}</p>
-                <p>Vehicle: {reservation.vehicle.name}</p>
-                <p>Start Date: {reservation.from_date}</p>
-                <p>End Date: {reservation.to_date}</p>
-                <p>Number of people: {reservation.number_of_person}</p>
-                <button onClick={() => deleteReservation(reservation)}>
-                  Delete
-                </button>
-              </div>
-            ))}
+          <h2 className="reservation-title">Your Reservations</h2>
+          <div className="reservations-div">
+            {allReservations &&
+              allReservations.map((reservation) => (
+                <div className="reservations-container" key={reservation.id}>
+                  <div className="reservation-div">
+                    <img src={reservation.vehicle.image} alt={reservation.vehicle.name} />
+                    <span>{reservation.vehicle.name}</span>
+                    <span>{reservation.vehicle.model}</span>
+                    <p>Reservation ID: {reservation.id}</p>
+                    <p>Start Date: {reservation.from_date}</p>
+                    <p>End Date: {reservation.to_date}</p>
+                    <p>Number of people: {reservation.number_of_person}</p>
+                    <button className="reservation-delete" onClick={() => deleteReservation(reservation)}>
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              ))}
+          </div>
         </>
       )}
     </div>
