@@ -34,16 +34,7 @@ const Reservations = () => {
     }
   }, [reservations]);
 
-  const deleteReservation = async (reservation) => {
-    setLoading(true);
-    dispatch(deleteReserv({ token: currentUser.data.token, id: reservation.id }))
-    .finally(() => {
-        const remainingReservations = allReservations.filter(
-      (r) => r.id !== reservation.id
-    );
-    setReservations(remainingReservations);
-  });
-  }
+  
 // const deleteReservation = async (reservation) => {
 //   setDeleting(true); // Set loading state to true
 //   try {
@@ -60,6 +51,40 @@ const Reservations = () => {
 //     setReservations(remainingReservations);
 //   }
 // };
+
+// const deleteReservation = async (reservation) => {
+//   setDeleting(true); // Set loading state to true
+//   try {
+//     dispatch(
+//       deleteReserv({ token: currentUser.data.token, id: reservation.id })
+//     );
+//     setReservations(prevReservations =>
+//       prevReservations.filter(r => r.id !== reservation.id)
+//     );
+//   } catch (error) {
+//     console.log("Error deleting reservation", error);
+//   } finally {
+//     setDeleting(false); // Set loading state to false
+//   }
+// };
+
+  const deleteReservation = async (reservation) => {
+    setDeleting(true); // Set loading state to true
+    setReservations((prevReservations) =>
+      prevReservations.filter((r) => r.id !== reservation.id)
+    );
+    try {
+      await dispatch(
+        deleteReserv({ token: currentUser.data.token, id: reservation.id })
+      );
+    } catch (error) {
+      console.log("Error deleting reservation", error);
+      setReservations((prevReservations) => [...prevReservations, reservation]);
+    } finally {
+      setDeleting(false); // Set loading state to false
+    }
+  };
+
 
   return (
     <div>
