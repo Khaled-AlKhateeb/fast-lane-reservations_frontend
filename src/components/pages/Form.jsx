@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { useNavigate } from 'react-router-dom';
 import './styles/form.css';
 import {
-  Button, MenuItem, Select, TextField,
+  Button,
+  MenuItem,
+  Select,
+  TextField,
 } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { createReservations, setStatus } from '../../redux/reservations/reservation';
+import {
+  createReservations,
+  setStatus,
+} from '../../redux/reservations/reservation';
 
 const Form = () => {
   const [fromDate, setFromDate] = useState('');
@@ -24,7 +30,9 @@ const Form = () => {
   const statusSetter = useSelector((state) => state.reservations.status);
   const handleVehicleId = (vecId) => {
     const vehicleId = Number(vecId);
-    const selectedVehicle = vehicles.find((vehicle) => vehicle.id === vehicleId);
+    const selectedVehicle = vehicles.find(
+      (vehicle) => vehicle.id === vehicleId,
+    );
     setVehicle(selectedVehicle);
   };
 
@@ -47,10 +55,10 @@ const Form = () => {
   }, [statusSetter]);
 
   return (
-    <div>
+    <div className="addReservationDiv">
       <form>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <MobileDatePicker
+          <DatePicker
             label="start date"
             inputFormat="YYYY-MM-DD"
             value={fromDate}
@@ -61,7 +69,7 @@ const Form = () => {
           />
         </LocalizationProvider>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <MobileDatePicker
+          <DatePicker
             label="end date"
             inputFormat="YYYY-MM-DD"
             value={toDate}
@@ -71,18 +79,30 @@ const Form = () => {
             fullWidth
           />
         </LocalizationProvider>
-        <TextField id="outlined-basic" label="Number of person" variant="outlined" type="number" onChange={(e) => setNumberOfPerson(e.target.value)} />
+        <TextField
+          id="outlined-basic"
+          sx={{ m: 1, minWidth: 250 }}
+          label="Number of person"
+          variant="outlined"
+          type="number"
+          onChange={(e) => setNumberOfPerson(e.target.value)}
+        />
         <Select
+          sx={{ m: 1, minWidth: 250 }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={vehicle?.id || ''}
           onChange={(e) => handleVehicleId(e.target.value)}
         >
           {vehicles && vehicles.map((vec) => (
-            <MenuItem value={vec.id} key={vec.id}>{vec.name}</MenuItem>
+            <MenuItem value={vec.id} key={vec.id}>
+              {vec.name}
+            </MenuItem>
           ))}
         </Select>
-        <Button variant="contained" onClick={handleSubmit}>Reserve</Button>
+        <Button variant="contained" onClick={handleSubmit}>
+          Reserve
+        </Button>
       </form>
     </div>
   );
