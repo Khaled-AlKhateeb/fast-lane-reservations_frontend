@@ -39,47 +39,47 @@ const AddVehicle = () => {
   };
 
   return (
-    <div className='main-container'>
+    <div className='add-main-container'>
       <h1>Add a Vehicle</h1>
       <form
         id='addVehicleForm'
-        className='form-container'
+        className='add-form-container'
         onSubmit={handleAdd}
       >
-        <div className='input-container'>
-          <label htmlFor='Image'>Image</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Image'>Image</label>
           <input
-            className='input'
+            className='add-input'
             name='Image'
             type='text'
             onChange={(e) => addImage(e.target.value)}
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='Name'>Name</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Name'>Name</label>
           <input
-            className='input'
+            className='add-input'
             name='Name'
             type='text'
             onChange={(e) => addName(e.target.value)}
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='Model'>Model</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Model'>Model</label>
           <input
-            className='input'
+            className='add-input'
             name='Model'
             type='text'
             onChange={(e) => addModel(e.target.value)}
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='Year'>Year</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Year'>Year</label>
           <input
-            className='input'
+            className='add-input'
             name='Year'
             type='number'
             onChange={(e) => addYear(e.target.value)}
@@ -88,20 +88,20 @@ const AddVehicle = () => {
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='HorsePower'>Horse Power</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='HorsePower'>Horse Power</label>
           <input
-            className='input'
+            className='add-input'
             name='HorsePower'
             type='number'
             onChange={(e) => addHorsePower(e.target.value)}
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='Price'>Price</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Price'>Price</label>
           <input
-            className='input'
+            className='add-input'
             name='Price'
             type='number'
             onChange={(e) => addPrice(e.target.value)}
@@ -109,10 +109,10 @@ const AddVehicle = () => {
             required
           />
         </div>
-        <div className='input-container'>
-          <label htmlFor='Description'>Description</label>
+        <div className='add-input-container'>
+          <label className="add-label" htmlFor='Description'>Description</label>
           <textarea
-            className='input'
+            className='add-input'
             name='Description'
             type='text'
             onChange={(e) => addDescription(e.target.value)}
@@ -121,7 +121,7 @@ const AddVehicle = () => {
           />
         </div>
         <button
-          className='submit-btn'
+          className='add-submit-btn'
           type='submit'
         >
           Add
@@ -129,7 +129,7 @@ const AddVehicle = () => {
       </form>
       {showSuccessMessage && (
         <p
-          className='success-message'
+          className='add-add-success-message'
           id='successMessage'
         >
           Vehicle added successfully!
