@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.splashDiv {
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(182, 175, 175, 0.2) 0, #facd05cc 0), url('https://res.cloudinary.com/dosu6sfvl/image/upload/v1679389948/Fast%20Lane%20Assets/bg-image_lpbp0r.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.splashHeader {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.loginRegDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  width: 50%;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 1rem;
+  background: green;
+  border-radius: 5rem;
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.link:hover {
+  color: green;
+  background: #fff;
+  transition: 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .loginRegDiv {
+    width: 20%;
+  }
+}

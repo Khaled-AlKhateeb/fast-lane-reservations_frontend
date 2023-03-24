@@ -1,0 +1,114 @@
+.add-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* justify-content: center; */
+
+  /* margin-top: 2rem; */
+
+  /* max-height: 50vh; */
+  overflow-y: auto;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+.add-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.add-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-label {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: start;
+}
+
+.add-input {
+  line-height: 2rem;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  background-color: rgb(238, 238, 238);
+  padding-left: 2rem;
+  font-size: 1.2rem;
+}
+
+.add-submit-btn {
+  border: none;
+  border-radius: 1rem;
+  width: 30%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.add-success-message {
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .add-main-container {
+    width: 100%;
+    height: 100vh;
+    margin-inline: auto;
+    gap: 3rem;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  .add-main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .add-main-container .add-main-container h1 {
+    padding-left: 1rem;
+  }
+
+  .add-form-container {
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .add-label {
+    padding-left: 1rem;
+  }
+
+  form > .add-input-container {
+    width: 50%;
+  }
+}

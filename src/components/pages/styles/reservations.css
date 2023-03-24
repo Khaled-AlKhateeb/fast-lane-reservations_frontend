@@ -1,0 +1,72 @@
+.reservation-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.reservation-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.reservations-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.reservation-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.reservation-img {
+  width: 150%;
+}
+
+.reservation-delete {
+  margin: 1rem;
+  width: 40%;
+  background-color: green;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.reservation-delete:hover {
+  background-color: white;
+  color: green;
+}
+
+.reserved-vehicle-name {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.reserved-vehicle-details {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .reservations-div {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .reserved-vehicle-details {
+    font-size: 1rem;
+  }
+}
