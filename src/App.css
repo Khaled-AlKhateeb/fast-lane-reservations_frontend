@@ -28,7 +28,14 @@
 }
 
 .navRoute {
-  height: 100%;
+  height: 80%;
+}
+
+.navApp {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: 100%;
 }
 
 .AppDiv {
@@ -43,6 +50,7 @@
   .navApp {
     width: 25%;
     background-color: lightgray;
+    position: relative;
   }
 
   .navRoute {

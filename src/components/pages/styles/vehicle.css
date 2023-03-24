@@ -1,122 +1,73 @@
-.vehiclesDiv {
-  text-align: center;
-}
-
 .main-title {
+  margin-top: 4rem;
+  font-size: 3rem;
   text-align: center;
+  font-weight: 800;
+  font-family: Roboto, sans-serif;
 }
 
-.vehicles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.vehicleImg {
+  display: block;
+  margin-inline: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .linkss {
-  flex: 0 0 200px;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  border-radius: 2rem;
+  padding-bottom: 1rem;
+}
+
+.vehicleDiv {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
+}
+
+.linkss>h3 {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 
 .linkss:hover {
   background-color: lightgray;
 }
 
-.slider-prev,
-.slider-next {
-  display: none;
+.vehicles {
+  height: 100vh;
+  width: 100%;
+  margin: auto;
 }
 
-.vehicleDiv {
-  overflow: hidden;
-  margin: 0 10px;
-}
-
-.slider-content {
+.swiper-container {
   display: flex;
-  transition: transform 0.3s ease-out;
+  justify-content: center;
+  height: 100%;
 }
 
-.vehicleImg {
-  width: 100vw;
+.vehicle-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 20rem;
 }
 
-@media screen and (min-width: 768px) {
-  .vehiclesDiv {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+.car-name {
+  text-transform: capitalize;
+}
 
-  .main-title {
-    margin: 4rem;
-    font-size: 3rem;
-    font-weight: 800;
-  }
-  
-  .vehicleImg {
-    width: 20rem;
-  }
-
-  .linkss {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #000;
-    border-radius: 2rem;
-    padding-bottom: 1rem;
-  }
-  
-  .vehicleDiv {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    width: 30%;
-  }
-  
-  .linkss > h3 {
-    font-size: 25px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .slider-prev,
-  .slider-next {
-    display: flex;
-    position: absolute;
-    width: 10%;
-    height: 10%;
-    background-color: aquamarine;
-  }
-
-  .slider-next {
-    right: 0;
-  }
-
-  .vehicles {
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    height: 100%;
-  }
-  
-  .vehicle-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 20rem;
-  }
-  
-  .car-name {
-    text-transform: capitalize;
-  }
-  
-  .model-name {
-    text-transform: uppercase;
-  }
+.model-name {
+  text-transform: uppercase;
 }

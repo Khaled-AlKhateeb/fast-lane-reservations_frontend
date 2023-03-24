@@ -4,31 +4,17 @@ import "./styles/vehicle.css";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getVehicles } from "../../redux/vehicles/vehicles";
-
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 const Vehicles = () => {
   const dispatch = useDispatch();
   const vehicle = useSelector((state) => state.vehicles);
   const [get, setGet] = useState(null);
-  document.addEventListener('DOMContentLoaded', () => {
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    const sliderContent = document.querySelector('.slider-content');
-    const elements = document.querySelectorAll('.linkss');
-    const slideWidth = elements[0].clientWidth;
-    let currentSlide = 0;
-    prevBtn.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        sliderContent.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-      }
-    });
-    nextBtn.addEventListener('click', () => {
-      if (currentSlide < elements.length - 1) {
-        currentSlide++;
-        sliderContent.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-      }
-    });
-  });
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     dispatch(getVehicles());
   }, []);
@@ -44,40 +30,54 @@ const Vehicles = () => {
     };
     return getVehicleId;
   };
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className='vehiclesDiv'>
-      <h2 className='main-title'>Browse through our available Race Machines</h2>
-      <div
-        id='slider'
-        className='vehicles'
-      >
-        <a id="prev" className='slider-prev' href='#'></a>
-        {vehicle &&
-          vehicle.vehicles.map((veh) => (
-            <div
-              className='vehicleDiv'
-              id="sliderWrap"
-              key={veh.id}
-            >
-              <div className="slider-content">
+      <div className="vehicles">
+        <h2>See all our fast bikes</h2>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={isMobile ? 1 : 3}
+          className="swiper-container"
+          navigation
+          pagination={{ clickable: true }}
+        >
+          {vehicle && vehicle.vehicles.map((veh) => (
+            <SwiperSlide key={veh.id}>
+              <div className="vehicleDiv">
                 <NavLink
                   onClick={getId(veh.id)}
                   state={veh}
                   to={`/details/${veh.id}`}
-                  className='linkss'
+                  className="linkss"
                 >
-                  <img
-                    src={veh.image}
-                    className='vehicleImg'
-                    alt=''
-                  />
-                  <h3 className='car-name'>{veh.name}</h3>
-                  <h3 className='model-name'>{veh.model}</h3>
+                  <img src={veh.image} className="vehicleImg" alt="" />
+                  <h3 className="car-name">{veh.name}</h3>
+                  <h3 className="model-name">{veh.model}</h3>
                 </NavLink>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-          <a id="next" className='slider-next' href='#'></a>
+          ...
+        </Swiper>
       </div>
     </div>
   );
