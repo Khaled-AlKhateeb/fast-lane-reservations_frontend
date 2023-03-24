@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import styles from '../left/styles';
 import './styles/vehicleDetails.css';
 
 const VehicleDetails = () => {
@@ -33,7 +34,10 @@ const VehicleDetails = () => {
             <p className="value"></p>
           </article>
           <br />
-          <NavLink to="/form">
+          <NavLink
+            to="/form"
+            style={styles}
+          >
             <div className="action">Reserve</div>
           </NavLink>
         </div>

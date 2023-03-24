@@ -9,7 +9,6 @@
 .vehicleImg {
   display: block;
   margin-inline: auto;
-  width: 200px;
   height: 200px;
   border-radius: 50%;
 }
@@ -30,8 +29,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+}
 
-  /* height: 100%; */
+.vehicles-title {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .linkss > h3 {
@@ -53,7 +55,6 @@
 .swiper-container {
   display: flex;
   justify-content: center;
-  margin-top: 270px;
 }
 
 .vehicle-container {

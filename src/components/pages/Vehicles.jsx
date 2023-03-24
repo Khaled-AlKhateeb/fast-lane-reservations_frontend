@@ -51,7 +51,7 @@ const Vehicles = () => {
   return (
     <div className='vehiclesDiv'>
       <div className="vehicles">
-        <h2>See all our fast bikes</h2>
+        <h2 className='vehicles-title'>See all our fast Machines</h2>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
