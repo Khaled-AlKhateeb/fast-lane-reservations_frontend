@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './styles/login.css';
 import { register } from '../../redux/apiCalls';
@@ -12,6 +12,10 @@ const Register = () => {
   const [err, setErr] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -62,7 +66,10 @@ const Register = () => {
         <input onChange={(e) => setEmail(e.target.value)} type="email" name="" id="" placeholder="Enter your email address" />
         <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter Password" name="" id="" />
         <input onChange={(e) => setPasswordConfirmation(e.target.value)} type="password" placeholder="Confirm Password" name="" id="" />
-        <button type="submit" onClick={handleRegister}>Signup</button>
+        <div className="login-btn-container">
+          <button className="login-btn" type="submit" onClick={handleRegister}>Signup</button>
+          <button className="login-btn" type="button" onClick={goBack}>Back</button>
+        </div>
         {err && <span>{err}</span>}
         <p>
           Have an account?

@@ -4,25 +4,55 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
 }
 
 .App {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   height: 100%;
 }
 
-.navApp {
-  flex: 1;
-  width: 20%;
-  border-right: 1px solid #111;
+.navRoute {
+  height: 80%;
 }
 
-.navRoute {
-  flex: 6;
-  width: 80%;
+.navApp {
+  top: 0;
+  background: #fff;
+  width: 100%;
 }
 
 .AppDiv {
   height: 100vh;
-  border: 1px solid #111;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    flex-direction: row;
+  }
+
+  .navApp {
+    width: 25%;
+    background-color: lightgray;
+    position: relative;
+  }
+
+  .navRoute {
+    width: 75%;
+  }
 }

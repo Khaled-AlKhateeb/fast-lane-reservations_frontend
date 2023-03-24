@@ -1,6 +1,4 @@
-
-
-/*.main-title {
+.main-title {
   margin-top: 4rem;
   font-size: 3rem;
   text-align: center;
@@ -11,7 +9,8 @@
 .vehicleImg {
   display: block;
   margin-inline: auto;
-  width: 100%;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -29,7 +28,10 @@
   gap: 1rem;
   flex-direction: column;
   align-items: center;
-  margin: 0;
+  justify-content: center;
+  margin-top: 50px;
+
+  /* height: 100%; */
 }
 
 .linkss > h3 {
@@ -43,12 +45,15 @@
 }
 
 .vehicles {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
   height: 100vh;
+  width: 100%;
+  margin: auto;
+}
+
+.swiper-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 270px;
 }
 
 .vehicle-container {
@@ -66,4 +71,4 @@
 
 .model-name {
   text-transform: uppercase;
-}*/
+}

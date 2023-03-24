@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './styles/vehicleDetails.css';
 
 const VehicleDetails = () => {
@@ -9,35 +10,32 @@ const VehicleDetails = () => {
   return (
     <>
       <div className="details-div">
-        <img src={state.image} alt="" />
+        <img src={state.image} alt={state.name} className='details-image' />
         <div className="text-details-div">
           <article className="item">
-            <p className="label">Name: </p>
-            <p className="value">{state.name}</p>
+            <p className="label">Manufacturer: <strong>{state.name}</strong> </p>
           </article>
           <article className="item">
-            <p className="label">Model: </p>
-            <p className="value">{state.model}</p>
+            <p className="label">Model: <strong>{state.model}</strong> </p>
           </article>
           <article className="item">
-            <p className="label">Horse Power: </p>
-            <p className="value">{state.horse_power} hp</p>
+            <p className="label">Horse Power: {state.horse_power} </p>
           </article>
           <article className="item">
-            <p className="label">Production: </p>
-            <p className="value">{state.year}</p>
+            <p className="label">Production: {state.year} </p>
           </article>
           <article className="item">
             <p className="label">{state.description}</p>
           </article>
+          <br />
           <article className="item">
-            <p className="label">Price: </p>
-            <p className="value">$ {state.price}</p>
+            <p className="label">Price: <strong>$ {state.price}</strong> </p>
+            <p className="value"></p>
           </article>
           <br />
-          <Link to="/form">
+          <NavLink to="/form">
             <div className="action">Reserve</div>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </>
