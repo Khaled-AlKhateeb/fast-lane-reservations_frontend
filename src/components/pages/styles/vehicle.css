@@ -29,11 +29,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  height: 100%;
+  margin-top: 50px;
+
+  /* height: 100%; */
 }
 
-.linkss>h3 {
+.linkss > h3 {
   font-size: 25px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
@@ -52,7 +53,7 @@
 .swiper-container {
   display: flex;
   justify-content: center;
-  height: 100%;
+  margin-top: 270px;
 }
 
 .vehicle-container {
