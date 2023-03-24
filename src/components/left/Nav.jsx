@@ -40,11 +40,9 @@ const Nav = () => {
             <RiReservedFill />
             Reservations
           </NavLink>
-          <NavLink to="/form">
-            <li className="link">
-              <RiAddCircleLine />
-              Add a reservation
-            </li>
+          <NavLink className="link" to="/form">
+            <RiAddCircleLine />
+            Add a reservation
           </NavLink>
           <NavLink
             to="/addVehicle"
