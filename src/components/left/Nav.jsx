@@ -10,6 +10,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from '../../redux/apiCalls';
+import styles from './styles';
 import './style/nav.css';
 
 const Nav = () => {
@@ -40,7 +41,8 @@ const Nav = () => {
           <NavLink
             to="/"
             className="nav-link"
-            onClick={() => {expandMenu()}}
+            onClick={() => { expandMenu() }}
+            style={styles}
           >
             <RiHome7Line />
             Home
@@ -48,7 +50,8 @@ const Nav = () => {
           <NavLink
             to="/reservations"
             className="nav-link"
-            onClick={() => {expandMenu()}}
+            onClick={() => { expandMenu() }}
+            style={styles}
           >
             <RiReservedFill />
             Reservations
@@ -56,7 +59,8 @@ const Nav = () => {
           <NavLink
             to="/form"
             className="nav-link"
-            onClick={() => {expandMenu()}}
+            onClick={() => { expandMenu() }}
+            style={styles}
           >
             <RiAddCircleLine />
             Add a reservation
@@ -64,7 +68,8 @@ const Nav = () => {
           <NavLink
             to="/addVehicle"
             className="nav-link"
-            onClick={() => {expandMenu()}}
+            onClick={() => { expandMenu() }}
+            style={styles}
           >
             <RiAddCircleLine />
             Add a vehicle
