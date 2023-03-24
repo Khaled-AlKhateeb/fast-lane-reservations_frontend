@@ -32,7 +32,6 @@
 }
 
 .navApp {
-  position: fixed;
   top: 0;
   background: #fff;
   width: 100%;
@@ -54,6 +53,6 @@
   }
 
   .navRoute {
-    width: 100%;
+    width: 75%;
   }
 }
