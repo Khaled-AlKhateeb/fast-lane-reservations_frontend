@@ -20,7 +20,7 @@ const App = () => {
         {currentUser && <div className="navApp">
           <Nav />
         </div>}
-        <div className="navRoute">
+        <div className={currentUser ? "navRoute" : "splashLogReg"}>
           <Routes>
             <Route path={"/reservations"} element={currentUser ? <Reservations /> : <Navigate to="/" />} />
             <Route path={"/form"} element={currentUser ? <Form /> : <Navigate to="/" />} />
