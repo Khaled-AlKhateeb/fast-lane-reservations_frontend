@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './styles/vehicleDetails.css';
 
 const VehicleDetails = () => {
@@ -32,9 +33,9 @@ const VehicleDetails = () => {
             <p className="value"></p>
           </article>
           <br />
-          <a href="./reserve">
+          <NavLink to="/form">
             <div className="action">Reserve</div>
-          </a>
+          </NavLink>
         </div>
       </div>
     </>
