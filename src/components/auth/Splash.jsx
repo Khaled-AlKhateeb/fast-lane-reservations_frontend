@@ -5,7 +5,7 @@ import './styles/splash.css';
 
 const Splash = () => (
   <div className="splashDiv">
-    <h1 className="splashHeader">Welcome to Fast Lane Reservations</h1>
+    <h1 className="splashHeader">Fast Lane Reservations</h1>
 
     <div className="loginRegDiv">
       <Link to="/login" className="link">

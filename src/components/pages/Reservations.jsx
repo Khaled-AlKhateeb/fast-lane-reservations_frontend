@@ -70,16 +70,16 @@ const Reservations = () => {
                   key={reservation.id}
                 >
                   <div className='reservation-div'>
-                    <img
+                    <img className='reservation-img'
                       src={reservation.vehicle.image}
                       alt={reservation.vehicle.name}
                     />
-                    <span>{reservation.vehicle.name}</span>
-                    <span>{reservation.vehicle.model}</span>
-                    <p>Reservation ID: {reservation.id}</p>
-                    <p>Start Date: {reservation.from_date}</p>
-                    <p>End Date: {reservation.to_date}</p>
-                    <p>Number of people: {reservation.number_of_person}</p>
+                    <span className='reserved-vehicle-name'>{reservation.vehicle.name}</span>
+                    <span className='reserved-vehicle-name'>{reservation.vehicle.model}</span>
+                    <p className='reserved-vehicle-details'>Reservation ID: {reservation.id}</p>
+                    <p className='reserved-vehicle-details'>Start Date: {reservation.from_date}</p>
+                    <p className='reserved-vehicle-details'>End Date: {reservation.to_date}</p>
+                    <p className='reserved-vehicle-details'>Number of people: {reservation.number_of_person}</p>
                     <button
                       className='reservation-delete'
                       onClick={() => deleteReservation(reservation)}

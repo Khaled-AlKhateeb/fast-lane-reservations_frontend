@@ -1,4 +1,110 @@
 .NavDiv {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 40%;
+}
+
+.nav-menu-container {
+  position: relative;
+}
+
+.nav-expand {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.nav-expand-icon {
+  font-size: 30px;
+}
+
+.nav-menu-list {
+  display: none;
+  position: absolute;
+  right: 0;
+  flex-direction: column;
+  width: 14rem;
+  background-color: green;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: black;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.nav-logout-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .NavDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+  }
+
+  .nav-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .nav-expand {
+    display: none;
+  }
+
+  .nav-menu-list {
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .nav-link,
+  .nav-logout-btn {
+    font-size: 1.7rem;
+    background-color: green;
+    border: 1px solid green;
+  }
+
+  .nav-link:hover {
+    background-color: transparent;
+    color: green;
+  }
+
+  .nav-logout-btn:hover {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+  }
+}
+/*.NavDiv {
   height: 100%;
 }
 
@@ -53,4 +159,4 @@
 .NavDiv > nav > ul .link.active {
   background: green;
   color: #fff;
-}
+}*/

@@ -70,13 +70,13 @@ const Form = () => {
     color: 'black',
     fontSize: '1.2rem',
     fontWeight: '600',
-    width: '30%',
+    width: '60%',
   };
 
   return (
     <div className="container">
       <h1 className="title">Reserve Your Machine</h1>
-      <form>
+      <form className="reservation-form">
         <div className="input-container">
           <h2>Select Start Date</h2>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -129,7 +129,9 @@ const Form = () => {
             ))}
           </Select>
         </div>
-        <Button style={styles} onClick={handleSubmit}>Reserve</Button>
+        <div className="reserve-btn-container">
+          <Button style={styles} onClick={handleSubmit}>Reserve</Button>
+        </div>
         {err && <span>{err}</span>}
       </form>
     </div>

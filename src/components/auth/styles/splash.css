@@ -22,6 +22,7 @@
   font-size: 2rem;
   font-weight: 900;
   font-family: sans-serif;
+  text-align: center;
 }
 
 .loginRegDiv {
@@ -30,7 +31,7 @@
   align-items: center;
   margin-top: 1.5rem;
   gap: 1rem;
-  width: 20%;
+  width: 50%;
 }
 
 .link {
@@ -54,4 +55,10 @@
   color: green;
   background: #fff;
   transition: 0.5s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .loginRegDiv {
+    width: 20%;
+  }
 }
