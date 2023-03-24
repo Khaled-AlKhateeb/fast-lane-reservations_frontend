@@ -14,7 +14,6 @@ import VehicleDetails from './components/pages/VehicleDetails';
 
 const App = () => {
   const { currentUser } = useSelector((state) => state.user)
-  // console.log(currentUser)
   return (
     <div className="AppDiv">
       <div className="App">
