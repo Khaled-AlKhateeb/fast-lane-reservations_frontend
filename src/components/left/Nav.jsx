@@ -56,6 +56,7 @@ const Nav = () => {
             <RiReservedFill />
             Reservations
           </NavLink>
+
           <NavLink
             to="/form"
             className="nav-link"

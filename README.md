@@ -13,6 +13,10 @@
 
 An app to book a race care to test in the track.
 [Link to the backend](https://github.com/Khaled-AlKhateeb/fast-lane-reservation_backend)
+[Link to Kanban board](https://github.com/users/Khaled-AlKhateeb/projects/1/views/1)
+[initial state of Kanban board](https://drive.google.com/file/d/1LPhdzRAzrIWa33RCv5sKe1t3BbNt2Zgs/view?usp=sharing)
+
+We are 4 team members who collaborated on this project
 
 ## 🛠 Built With <a id="built-with"></a>
 
