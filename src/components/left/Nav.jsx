@@ -36,7 +36,7 @@ const Nav = () => {
         alt="Fast Lane logo"
       />
       <nav className="nav-menu-container">
-        <button type="button" className="nav-expand" onClick={() => {expandMenu()}}><RiMenuFill className="nav-expand-icon" /></button>
+        <button type="button" className="nav-expand" onClick={() => { expandMenu() }}><RiMenuFill className="nav-expand-icon" /></button>
         <ul id="navMenuList" className="nav-menu-list">
           <NavLink
             to="/"

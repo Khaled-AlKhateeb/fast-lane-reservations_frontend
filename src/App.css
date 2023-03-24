@@ -52,6 +52,11 @@
     position: relative;
   }
 
+  .splashLogReg {
+
+    width: 100%;
+  }
+
   .navRoute {
     width: 75%;
   }
